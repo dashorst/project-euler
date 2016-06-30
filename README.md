@@ -1,2 +1,3 @@
 # project-euler
-Solutions for project Euler exercises
+
+My Java solutions for [Project Euler](https://projecteuler.net) exercises.
