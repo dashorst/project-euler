@@ -5,7 +5,6 @@ import static org.junit.Assert.assertThat;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.IntStream;
 
 import org.junit.Test;
@@ -45,11 +44,11 @@ public class Euler14 {
 
 	@Test
 	public void solution() {
-		Optional<CollatzChain> max = IntStream.range(1, 999_999).mapToObj(this::getCollatzChain)
-				.max((c1, c2) -> c1.length - c2.length);
+		CollatzChain collatzChainWithMaximumLength = IntStream.range(1, 999_999).mapToObj(this::getCollatzChain)
+				.max((c1, c2) -> c1.length - c2.length).get();
 
-		assertThat(max.get().length, is(525));
-		assertThat(max.get().start, is(837_799L));
+		assertThat(collatzChainWithMaximumLength.length, is(525));
+		assertThat(collatzChainWithMaximumLength.start, is(837_799L));
 	}
 
 	private Map<Long, CollatzChain> chains = new HashMap<>();
