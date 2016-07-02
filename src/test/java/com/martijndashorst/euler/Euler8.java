@@ -71,6 +71,9 @@ public class Euler8 {
 	}
 
 	private long productOfDigits(String digits) {
-		return digits.chars().mapToLong(i -> i - '0').reduce(1, (i1, i2) -> i1 * i2);
+		return digits
+				.chars()
+				.mapToLong(i -> i - '0')
+				.reduce(1, (i1, i2) -> i1 * i2);
 	}
 }
