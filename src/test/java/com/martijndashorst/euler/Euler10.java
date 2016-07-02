@@ -23,25 +23,6 @@ public class Euler10 {
 	}
 
 	private long sumOfPrimesBelow(int nr) {
-		return IntStream.range(2, nr).filter(this::isPrime).asLongStream().sum();
-	}
-
-	private boolean isPrime(int number) {
-		if (number < 2)
-			return false;
-		if (number <= 3)
-			return true;
-		if (number % 2 == 0)
-			return false;
-		if (number % 3 == 0)
-			return false;
-		int j = 5;
-		int limit = (int) Math.sqrt(number);
-		while (j <= limit) {
-			if (number % j == 0 || number % (j + 2) == 0)
-				return false;
-			j += 6;
-		}
-		return true;
+		return IntStream.range(2, nr).filter(Functions::isPrime).asLongStream().sum();
 	}
 }

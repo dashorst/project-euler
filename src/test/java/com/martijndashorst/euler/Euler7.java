@@ -1,5 +1,7 @@
 package com.martijndashorst.euler;
 
+import static com.martijndashorst.euler.Functions.isPrime;
+
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
@@ -35,24 +37,5 @@ public class Euler7 {
 			possiblePrime++;
 		}
 		return lastPrime;
-	}
-
-	private boolean isPrime(long number) {
-		if (number < 2)
-			return false;
-		if (number <= 3)
-			return true;
-		if (number % 2 == 0)
-			return false;
-		if (number % 3 == 0)
-			return false;
-		int j = 5;
-		int limit = (int) Math.sqrt(number);
-		while (j <= limit) {
-			if (number % j == 0 || number % (j + 2) == 0)
-				return false;
-			j += 6;
-		}
-		return true;
 	}
 }

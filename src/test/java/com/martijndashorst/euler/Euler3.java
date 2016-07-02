@@ -1,5 +1,7 @@
 package com.martijndashorst.euler;
 
+import static com.martijndashorst.euler.Functions.isPrime;
+
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
@@ -57,24 +59,5 @@ public class Euler3 {
 		Assert.assertFalse(isPrime(21));
 		Assert.assertFalse(isPrime(25));
 		Assert.assertFalse(isPrime(49));
-	}
-
-	private boolean isPrime(int number) {
-		if (number < 2)
-			return false;
-		if (number <= 3)
-			return true;
-		if (number % 2 == 0)
-			return false;
-		if (number % 3 == 0)
-			return false;
-		int j = 5;
-		int limit = (int) Math.sqrt(number);
-		while (j <= limit) {
-			if (number % j == 0 || number % (j + 2) == 0)
-				return false;
-			j += 6;
-		}
-		return true;
 	}
 }
